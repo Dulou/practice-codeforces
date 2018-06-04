@@ -1,17 +1,16 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
+
 int main()
 {
-    int force[101][3];
-    int n;
-    int x=0,y=0,z=0;
-    cin>>n;
-    for(int i=0;i<n;++i){
-        cin>>force[i][0]>>force[i][1]>>force[i][2];
-        x += force[i][0];
-        y += force[i][1];
-        z += force[i][2];
+    char s[100];
+    int m=0;
+    cin>>s;
+    int b=strlen(s);
+    for(int i=0;i<b;i++){
+        if(s[i]>='a')m++;
     }
-    cout<<((x==0&&y==0&&z==0)?"YES":"NO");
+    cout<<((m<b-m)?strupr(s):strlwr(s));
     return 0;
 }
